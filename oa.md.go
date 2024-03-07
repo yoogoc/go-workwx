@@ -204,6 +204,16 @@ type OAContentDateRange struct {
 	NewEnd int `json:"new_end"`
 	// NewDuration 时长范围，单位秒
 	NewDuration int `json:"new_duration"`
+	// TimezoneInfo 时区信息，只有在非UTC+8的情况下会返回
+	TimezoneInfo *OAContentDateRangeTimezoneInfo `json:"timezone_info"`
+}
+
+// OAContentDateRangeTimezoneInfo 时区信息
+type OAContentDateRangeTimezoneInfo struct {
+	// ZoneOffset 时区偏移量
+	ZoneOffset string `json:"zone_offset"`
+	// ZoneDesc 时区描述
+	ZoneDesc string `json:"zone_desc"`
 }
 
 // OATemplateDetail 审批模板详情
